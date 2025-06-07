@@ -1,4 +1,109 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Floating button */
+    #tutorial-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background-color: #3c8dde;
+      border-radius: 50%;
+      color: white;
+      font-size: 32px;
+      text-align: center;
+      line-height: 60px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+      transition: background 0.3s;
+    }
+
+    #tutorial-toggle:hover {
+      background-color: #2767a6;
+    }
+
+    /* Popup box */
+    #tutorial-box {
+      position: fixed;
+      bottom: 100px;
+      right: 24px;
+      width: 280px;
+      padding: 16px 18px;
+      background-color: #181a20;
+      color: #eee;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 9998;
+      font-size: 14px;
+    }
+
+    #tutorial-box a {
+      color: #7ea6ff;
+      text-decoration: none;
+    }
+
+    #tutorial-box a:hover {
+      text-decoration: underline;
+    }
+
+    #tutorial-box-close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    #tutorial-box-close:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating Question Mark -->
+<div id="tutorial-toggle">?</div>
+
+<!-- Tutorial Popup -->
+<div id="tutorial-box">
+  <div id="tutorial-box-close">&times;</div>
+  <strong>You’re in tutorial mode</strong><br><br>
+  Please go to<br>
+  <a href="https://hpd666.github.io/Orgena-Web/" target="_blank">
+    https://hpd666.github.io/Orgena-Web/
+  </a><br>
+  to allow AI teacher and be able to use more codes.
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('tutorial-toggle');
+  const box = document.getElementById('tutorial-box');
+  const closeBtn = document.getElementById('tutorial-box-close');
+
+  toggleBtn.addEventListener('click', () => {
+    box.style.display = box.style.display === 'block' ? 'none' : 'block';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    box.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
